@@ -24,36 +24,5 @@ public class InicioSteps {
         popup1(inicioPage.apopup);
     }
 
-    @Step("Seleccionar icono de usuario")
-    public void seleccionarInconUser(){
 
-        inicioPage.spanIconuser.click();
-    }
-
-    @Step("Seleccionar registro")
-    public void seleccionarRegistro() {
-
-        inicioPage.aregistro.click();
-    }
-
-    @Step("Seleccionar formulario")
-    public void seleccionarFormulario() {
-
-        inicioPage.buttonRegistro.waitUntilClickable().click();
-    }
-
-    @Step("Seleccionar nueva ventana")
-    public void entreVentanas() {
-//        String originalWindow = driver.getWindowHandle(); Driver= inicioPage.getDriver()
-
-
-        for (String windowHandle : inicioPage.getDriver().getWindowHandles()) {
-            if(!inicioPage.getDriver().getWindowHandle().contentEquals(windowHandle)) {
-                inicioPage.getDriver().switchTo().window(windowHandle);
-                break;
-            }
-        }
-
-
-    }
 }

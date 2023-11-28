@@ -6,6 +6,17 @@ import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 
 public class RegistroPage extends PageObject {
+
+
+    @FindBy(how = How.XPATH, using = "//span[@class='icon-user']")
+    public WebElementFacade spanIconuser;
+
+
+    @FindBy(how = How.XPATH, using = "//a[@class='cdc-fire cdc-register']")
+    public WebElementFacade aregistro;
+    @FindBy(how = How.XPATH, using = "//button[@id='vtexIdUI-custom-oauth']")
+    public WebElementFacade buttonRegistro;
+
 //                     DATOS DE REGHISTRO 1
     @FindBy(how = How.XPATH, using = "(//input[@name='email'])[4]")
     public WebElementFacade inputCorreo;

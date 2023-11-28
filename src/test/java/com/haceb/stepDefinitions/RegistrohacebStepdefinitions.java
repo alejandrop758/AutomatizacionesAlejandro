@@ -18,13 +18,18 @@ public class RegistrohacebStepdefinitions {
     public void queElUsuarioAbreElNavegadorEIngreaALaPaginaDeHaceb() {
         inicioSteps.abrirNavegador();
         inicioSteps.cerrarPopup();
-        inicioSteps.seleccionarInconUser();
-        inicioSteps.seleccionarRegistro();
-        inicioSteps.seleccionarFormulario();
-        inicioSteps.entreVentanas();
+
     }
     @Cuando("selecciona el boton de registrarse y llena todos los datos")
     public void seleccionaElBotonDeRegistrarseYLlenaTodosLosDatos() {
+
+        registroSteps.seleccionarInconUser();
+        registroSteps.seleccionarRegistro();
+        registroSteps.seleccionarFormulario();
+        registroSteps.entreVentanas();
+
+// Llena todos los datos
+
         registroSteps.completarFormulario();
         registroSteps.seleccionarCheckbots();
         registroSteps.datosComplementarios();

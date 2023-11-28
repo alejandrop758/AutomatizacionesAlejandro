@@ -10,6 +10,40 @@ import org.openqa.selenium.support.ui.Select;
 public class RegistroSteps {
     @Page
     RegistroPage registroPage;
+
+    @Step("Seleccionar icono de usuario")
+    public void seleccionarInconUser(){
+
+        registroPage.spanIconuser.click();
+    }
+
+    @Step("Seleccionar registro")
+    public void seleccionarRegistro() {
+
+        registroPage.aregistro.click();
+    }
+
+    @Step("Seleccionar formulario")
+    public void seleccionarFormulario() {
+
+        registroPage.buttonRegistro.waitUntilClickable().click();
+    }
+
+    @Step("Seleccionar nueva ventana")
+    public void entreVentanas() {
+//        String originalWindow = driver.getWindowHandle(); Driver= inicioPage.getDriver()
+
+
+        for (String windowHandle : registroPage.getDriver().getWindowHandles()) {
+            if(!registroPage.getDriver().getWindowHandle().contentEquals(windowHandle)) {
+                registroPage.getDriver().switchTo().window(windowHandle);
+                break;
+            }
+        }
+
+
+    }
+
     @Step("completar el formulario de registro")
     public void completarFormulario() {
 
@@ -43,6 +77,7 @@ public class RegistroSteps {
         select.selectByVisibleText(Data.extractTo().get(0).get("Genero"));
 
         registroPage.inputFecha.sendKeys(Data.extractTo().get(0).get("Fecha"));
+
 //        Fecha	CodigoP	Telefono	Departamento	Ciudad
 
 //        Select select1 = new Select(registroPage.selectpais);

@@ -2,6 +2,7 @@ package com.haceb.steps;
 
 import com.haceb.pageObject.InicioPage;
 
+import com.haceb.pageObject.ValidacionPage;
 import net.thucydides.core.annotations.Step;
 import org.fluentlenium.core.annotation.Page;
 import org.junit.Assert;
@@ -10,19 +11,19 @@ import static com.haceb.utils.Esperas.espera1;
 
 public class ValidacionSteps {
     @Page
-    InicioPage inicioPage;
+    ValidacionPage validacionPage;
 
     @Step("completar el formulario de registro")
     public void validacionPerfil() {
-        for (String windowHandle : inicioPage.getDriver().getWindowHandles()) {
-            if(!inicioPage.getDriver().getWindowHandle().contentEquals(windowHandle)) {
-                inicioPage.getDriver().switchTo().window(windowHandle);
+        for (String windowHandle : validacionPage.getDriver().getWindowHandles()) {
+            if(!validacionPage.getDriver().getWindowHandle().contentEquals(windowHandle)) {
+                validacionPage.getDriver().switchTo().window(windowHandle);
                 break;
             }
         }
-        espera1(inicioPage.getDriver(),inicioPage.inputPerfilValidar);
 
-        Assert.assertTrue(inicioPage.inputPerfilValidar.isDisplayed());
+        espera1(validacionPage.getDriver(),validacionPage.inputPerfilValidar);
+        Assert.assertTrue(validacionPage.inputPerfilValidar.isDisplayed());
 
     }
 }
