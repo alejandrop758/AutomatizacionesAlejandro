@@ -46,7 +46,7 @@ public class RegistroSteps {
 
     }
 
-    @Step("completar el formulario de registro")
+    @Step("completar el formulario de registro 1")
     public void completarFormulario() {
 
         registroPage.inputCorreo.sendKeys(Data.extractTo().get(0).get("Correo"));

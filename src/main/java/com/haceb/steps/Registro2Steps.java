@@ -12,7 +12,7 @@ public class Registro2Steps {
     Registro2Page registro2Page;
 
 
-    @Step("Continuar con el registro")
+    @Step("Completar el fomulario de registro 2")
     public void completarFormulario2(){
 
         registro2Page.inputCedula.sendKeys(Data.extractTo().get(0).get("Cedula"));

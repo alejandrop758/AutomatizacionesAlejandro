@@ -13,7 +13,7 @@ public class ValidacionSteps {
     @Page
     ValidacionPage validacionPage;
 
-    @Step("completar el formulario de registro")
+    @Step("Abrir Ventana y Validar el Registro Exitoso")
     public void validacionPerfil() {
         for (String windowHandle : validacionPage.getDriver().getWindowHandles()) {
             if(!validacionPage.getDriver().getWindowHandle().contentEquals(windowHandle)) {
