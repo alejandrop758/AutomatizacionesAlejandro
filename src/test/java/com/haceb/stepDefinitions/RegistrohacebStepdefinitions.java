@@ -1,6 +1,7 @@
 package com.haceb.stepDefinitions;
 
 import com.haceb.steps.InicioSteps;
+import com.haceb.steps.Registro2Steps;
 import com.haceb.steps.RegistroSteps;
 import com.haceb.steps.ValidacionSteps;
 import io.cucumber.java.es.*;
@@ -11,6 +12,8 @@ public class RegistrohacebStepdefinitions {
     InicioSteps inicioSteps;
     @Steps
     RegistroSteps registroSteps;
+    @Steps
+    Registro2Steps registro2Steps;
     @Steps
     ValidacionSteps validacionSteps;
 
@@ -28,22 +31,19 @@ public class RegistrohacebStepdefinitions {
         registroSteps.seleccionarFormulario();
         registroSteps.entreVentanas();
 
-// Llena todos los datos
+// completar formulario 1
 
         registroSteps.completarFormulario();
-        registroSteps.seleccionarCheckbots();
-        registroSteps.datosComplementarios();
-        registroSteps.datosTelefono();
-        registroSteps.selectDepartamento();
-        registroSteps.selectCiudad();
-        registroSteps.seleccionarCheckbots2();
 
+//  completar formulario 2
+
+        registro2Steps.completarFormulario2();
     }
     @Entonces("el usuario podrá visualizar el registro exitoso.")
     public void elUsuarioPodráVisualizarElRegistroExitoso() {
+
         validacionSteps.validacionPerfil();
 
     }
 
-    }
-
+}
